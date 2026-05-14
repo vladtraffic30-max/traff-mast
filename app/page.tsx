@@ -114,18 +114,29 @@ const MagneticButton = ({ href, children, variant = "primary", className = "" })
 };
 
 function useCountdown() {
-  const target = useMemo(() => {
-    const saved = localStorage.getItem("tm_deadline");
-    if (saved) return Number(saved);
-    const deadline = Date.now() + 3 * 24 * 60 * 60 * 1000;
-    localStorage.setItem("tm_deadline", String(deadline));
-    return deadline;
-  }, []);
-
-  const [left, setLeft] = useState(Math.max(0, target - Date.now()));
+  const [target, setTarget] = useState<number | null>(null);
+  const [left, setLeft] = useState(3 * 24 * 60 * 60 * 1000);
 
   useEffect(() => {
-    const t = setInterval(() => setLeft(Math.max(0, target - Date.now())), 1000);
+    const saved = window.localStorage.getItem("tm_deadline");
+    const deadline = saved
+      ? Number(saved)
+      : Date.now() + 3 * 24 * 60 * 60 * 1000;
+
+    if (!saved) {
+      window.localStorage.setItem("tm_deadline", String(deadline));
+    }
+
+    setTarget(deadline);
+  }, []);
+
+  useEffect(() => {
+    if (!target) return;
+
+    const t = setInterval(() => {
+      setLeft(Math.max(0, target - Date.now()));
+    }, 1000);
+
     return () => clearInterval(t);
   }, [target]);
 
@@ -134,6 +145,7 @@ function useCountdown() {
   const hours = Math.floor((total % 86400) / 3600);
   const minutes = Math.floor((total % 3600) / 60);
   const seconds = total % 60;
+
   return { days, hours, minutes, seconds };
 }
 
