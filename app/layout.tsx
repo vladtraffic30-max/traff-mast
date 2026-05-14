@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Traffic Masters",
-  description: "Traffic Masters — арбітраж трафіку та запуск у Facebook",
+  description: "Traffic Masters - арбітраж трафіку та запуск у Facebook",
   icons: {
     icon: "/favicon.ico",
   },
