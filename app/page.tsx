@@ -29,8 +29,8 @@ import {
 } from "lucide-react";
 
 const TELEGRAM_URL = "https://t.me/TM_vladosss";
-const SPEC_PAY_URL = "https://t.me/TM_vladosss";
-const PROSPEC_PAY_URL = "https://t.me/TM_vladosss";
+const SPEC_PAY_URL = "https://secure.wayforpay.com/button/bf2425a5b4d77";
+const PROSPEC_PAY_URL = "https://secure.wayforpay.com/button/bfc7230f81f3b";
 
 const Section = ({ id, children, className = "" }) => (
   <motion.section
