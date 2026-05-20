@@ -1224,6 +1224,14 @@ export default function TrafficMastersLanding() {
           <BadgeCheck className="h-5 w-5" /> Отримати доступ до ProSpec за 879 грн
         </a>
       </div>
+
+      <footer className="flex justify-center gap-6 py-10 text-sm text-slate-500 border-t border-white/10">
+  <a href="/terms.html">Terms</a>
+  <a href="/refund.html">Refund</a>
+  <a href="/privacy.html">Privacy</a>
+  <a href="/contacts.html">Contacts</a>
+</footer>
+
     </main>
   );
 }
