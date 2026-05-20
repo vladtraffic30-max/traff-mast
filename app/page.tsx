@@ -1226,10 +1226,10 @@ export default function TrafficMastersLanding() {
       </div>
 
      <footer className="relative z-[9999] flex justify-center gap-6 py-10 text-sm text-slate-400 border-t border-white/10">
-  <a className="relative z-[9999] hover:text-white" href="/terms.html">Terms</a>
-  <a className="relative z-[9999] hover:text-white" href="/refund.html">Refund</a>
-  <a className="relative z-[9999] hover:text-white" href="/privacy.html">Privacy</a>
-  <a className="relative z-[9999] hover:text-white" href="/contacts.html">Contacts</a>
+ <a href="/terms.html">Terms</a>
+<a href="/refund.html">Refund</a>
+<a href="/privacy.html">Privacy</a>
+<a href="/contacts.html">Contacts</a>
 </footer>
     </main>
   );
